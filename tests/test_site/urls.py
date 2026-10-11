@@ -1,4 +1,7 @@
-from django.urls import re_path
+try:
+    from django.urls import re_path
+except ImportError:  # Django < 2.0, where re_path did not exist yet
+    from django.conf.urls import url as re_path
 
 from . import views
 
